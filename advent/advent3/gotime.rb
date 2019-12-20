@@ -66,10 +66,7 @@ wire2 = load_file('./wire2.txt').split(',')
 
 @map1 = TravelMap.new(Point.new(0, 0), wire1)
 @map2 = TravelMap.new(Point.new(0, 0), wire2)
-# puts 'Obj 1'
-# puts @map1.point_history
-# puts 'Obj 2'
-# puts @map2
+
 puts "Map 1 Lines in order"
 puts @map1.lines_in_order
 puts "Map 2 Lines in order"
@@ -124,90 +121,3 @@ end
 p arr.min
 # p @steps
 p @steps.min
-
-# wire1 = ['-1, -4', '-1,  4', '-1, -4']
-# wire2 = ['-1, -8', '-1,  3', '-1, -4']
-# # returns items that matched
-# p wire1 & wire2
-
-# # class Do < Array
-# #   attr_accessor :at_position, :x, :y, :action, :output_pos
-
-# #   @@Code = %i{E W N S}
-# # end
-
-
-# # My test Dog
-# class PointTest
-#   extend Test::Unit::Assertions
-#   def self.run
-#     puts "Running Test 1"
-#     p1 = Point.new(4, 4)
-#     p2 = Point.new(4, 4)
-#     print p1
-#     puts p2
-#     assert_equal(0, p1.get_distance(p2), 'Distance between points should be 0')
-#     assert_equal(true, p1.location_same?(p2))
-#     assert_equal(0, p1.get_distance(p2))
-#     assert_equal(true, p1 == p2)
-    
-#     puts "Running Test 2"
-#     p1 = Point.new(-5, -5)
-#     p2 = Point.new(3, 4)
-#     print p1
-#     puts p2
-#     assert_equal(17, p1.get_distance(p2), 'Distance between points should be 17')
-#     assert_equal(false, p1.location_same?(p2), 'Location should not be the same')
-#     assert_equal(false, p1 == p2)
-#     # test moving the point
-#     assert_equal(Point.new(-5, -1), p1.move(:U, 4))
-#     assert_equal(Point.new(-5, -5), p1.move(:D, 4))
-#   end
-# end
-
-# PointTest.run
-
-
-# class PositionalObj
-#   attr_accessor :start_pos
-#   def initialize(position,data)
-#     @start_pos = postition
-#     @raw_data = data
-#   end
-#   class << self
-#     def to_points
-
-#     end
-#   end
-# end
-
-#   def initialize(data)
-#     super(data)
-#     @at_position = 0
-#     @action = 0
-#     @x = 0
-#     @y = 0
-#     @output_pos = 0
-#   end
-
-#   def add(p1, p2)
-#     p1 + p2
-#   end
-
-#   def multi(p1, p2)
-#     p1 * p2
-#   end
-
-#   def stop
-#     p self
-#     exit
-#   end
-
-#   def something(p1, p2, p3)
-#     send(@@Code[p1.to_s.to_sym],p2,p3)
-#   end
-
-#   def execute
-#     self[output_pos] = something(@action, @x, @y)
-#   end
-# end
