@@ -10,6 +10,8 @@ class Do < Array
   @@Code = {
     :'1' => :add,
     :'2' => :multi,
+    :'3' => :input,    
+    :'4' => :output,
     :'99' => :stop,
   }
 

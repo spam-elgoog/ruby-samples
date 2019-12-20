@@ -1,3 +1,17 @@
+
+# An Intcode program is a list of integers separated by commas (like 1,0,0,3,99).
+# To run one, start by looking at the first integer (called position 0). Here, 
+# you will find an opcode - either 1, 2, or 99. The opcode indicates what to do;
+# for example, 99 means that the program is finished and should immediately halt.
+# Encountering an unknown opcode means something went wrong.
+
+# op code 3,50 takes input parameter in this case the digit directly behind is where to
+# store it at 50
+
+# op code 4, 50 means output the parameter that is stored at 50
+# given the above 3,0,4,0,99  will take input store it in memory 0 and 
+# then output what is in memory 0 then stop executing       
+
 def load_file
   File.read('./data2.txt')
 end
