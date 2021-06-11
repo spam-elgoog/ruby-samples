@@ -58,5 +58,31 @@ one_hash.each_pair do |key, val|
   p key + ':' + val
 end
 
-my_enum = one_hash.each
-p my_enum
+
+def do_this
+  my =  Hash.new { |h, k| h[k] = [] }
+  arry = %w[bob pete frank henry pete pete]
+
+  arry.each do |item|
+    puts item
+    p case item
+    when 'pete'
+      my['pete'] << item
+    when 'bob'
+      my['bob'] << item
+    when 'frank'
+      my['frank'] << item
+    when 'henry'
+      my['henry'] << item
+    when 'jerome'
+      my['jerome'] << item
+    end
+  end
+  my
+end
+
+my = do_this
+p my
+# my_enum = one_hash.each
+# p my_enum
+
