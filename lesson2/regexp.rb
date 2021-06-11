@@ -1,7 +1,8 @@
 # !/usr/bin/env ruby
 # frozen_string_literal: true
 
-require('English')
+require 'English'
+
 # Rubular assignments
 # Assignment at
 # https://shopify.instructure.com/courses/280/assignments/1172?module_item_id=3748
@@ -9,9 +10,9 @@ require('English')
 #     or dec, a number, if, and a boolean expression), create a regular
 #     expression that returns the variable name, the number, and the
 #     boolean expression.
-text = "Here is a file with random stuff
-     there is also this ebu inc 626 if iq < 0  # which I don't understand
-      and well that's about it"
+text = "Here is a file with random stuff"\
+     "there is also this ebu inc 626 if iq < 0  # which I don't understand"\
+      "and well that's about it"
 
 # The string to match:  ebu inc 626 if iq < 0
 pattern = /
@@ -23,6 +24,27 @@ pattern = /
     \sif\s
     (?<expression>[a-z]+\s(?:<|<=|>|>=|==)\s0) # capture boolean expr
 /x
+
+my_sample = "imported_invoice_1256.csv"
+
+FILE_REGEXP = /
+  imported_invoice_
+  (?<id>[0-9]+)
+  \.
+  (?<file_extension>csv|dat|txt)
+/x
+class Matcher
+  def initialize(file)
+    @file = file
+  end
+  def print(data)
+    @file.match(data) do |d|
+      puts d[:id]
+      puts d[:file_extension]
+    end
+  end
+end
+Matcher.new(my_sample).print(FILE_REGEXP)
 
 # search and match the first occurance
 if (data = text.match(pattern))
