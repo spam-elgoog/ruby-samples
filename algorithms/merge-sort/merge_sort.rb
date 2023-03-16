@@ -29,9 +29,9 @@ end
 
 Random.path_literal_test
 
-# puts Benchmark.measure {
-#   input = Random.array_of_natural_numbers(100)
-# }
+puts Benchmark.measure {
+  input = Random.array_of_natural_numbers(100)
+}
 
 def flatten_test
   n = 50_000
